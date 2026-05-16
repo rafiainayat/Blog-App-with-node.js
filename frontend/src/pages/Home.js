@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 
 const Home = () => {
@@ -60,9 +60,30 @@ const Home = () => {
             </div>
           </div>
 
+          <div className="flex flex-col md:flex-row gap-4 mb-8">
+            <Link
+              to="/blogs"
+              className="flex-1 px-6 py-3 bg-gradient-to-r from-indigo-500 to-purple-600 text-white font-semibold rounded-lg hover:shadow-lg transition duration-300 text-center"
+            >
+              📚 View All Blogs
+            </Link>
+            <Link
+              to="/my-blogs"
+              className="flex-1 px-6 py-3 bg-gradient-to-r from-green-500 to-emerald-600 text-white font-semibold rounded-lg hover:shadow-lg transition duration-300 text-center"
+            >
+              ✏️ My Blogs
+            </Link>
+            <Link
+              to="/create-blog"
+              className="flex-1 px-6 py-3 bg-gradient-to-r from-orange-500 to-red-600 text-white font-semibold rounded-lg hover:shadow-lg transition duration-300 text-center"
+            >
+              ➕ Create Blog
+            </Link>
+          </div>
+
           <button
             onClick={handleLogout}
-            className="w-full md:w-auto px-8 py-3 bg-gradient-to-r from-indigo-500 to-purple-600 text-white font-semibold rounded-lg hover:shadow-lg transition duration-300"
+            className="w-full md:w-auto px-8 py-3 bg-gray-400 hover:bg-gray-500 text-white font-semibold rounded-lg transition duration-300"
           >
             Logout
           </button>
